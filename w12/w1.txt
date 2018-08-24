@@ -1,5 +1,47 @@
------| success |-----------------------
-# this test should pass
+-----| dummy_fail |-----------------------
+# this test should fail
+Traceback (most recent call last):
+  File "/Users/jaymindesai/PycharmProjects/fss18/w12/w1.py", line 20, in k
+    f()
+  File "/Users/jaymindesai/PycharmProjects/fss18/w12/w1.py", line 34, in dummy_fail
+    assert 1 == 2
+AssertionError
+
+
+-----| testing_page5 |-----------------------
+# Whitespace Formatting
 # pass
 
-# pass= 1 fail= 0 %pass = 100%
+-----| testing_page6 |-----------------------
+# modules
+# pass
+
+-----| testing_page7 |-----------------------
+# Arithmetic
+# pass
+
+-----| testing_page8 |-----------------------
+# Functions
+# pass
+
+-----| testing_page9 |-----------------------
+# Strings
+# pass
+
+-----| testing_page10 |-----------------------
+# Exceptions
+# pass
+
+-----| testing_page11 |-----------------------
+# Lists
+# pass
+
+-----| testing_page12 |-----------------------
+# Lists
+# pass
+
+-----| testing_page13 |-----------------------
+# Tuples
+# pass
+
+# pass= 9 fail= 1 %pass = 90%
