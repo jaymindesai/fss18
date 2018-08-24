@@ -1,0 +1,5 @@
+-----| success |-----------------------
+# this test should pass
+# pass
+
+# pass= 1 fail= 0 %pass = 100%
