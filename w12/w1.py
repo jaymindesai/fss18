@@ -215,6 +215,16 @@ def testing_page17_again():
     assert time_taken_set <= time_taken_list
 
 
+@O.k
+def testing_page18():
+    """Control Flow"""
+
+    def test_ternary(x):
+        return "Zero" if x == 0 else "Non-Zero"
+
+    assert test_ternary(0) == "Zero"
+    assert test_ternary(1) == "Non-Zero"
+
 
 
 if __name__ == "__main__":
