@@ -69,4 +69,44 @@ AssertionError
 # Control Flow
 # pass
 
-# pass= 15 fail= 1 %pass = 94%
+-----| testing_page19 |-----------------------
+# Truthiness
+# pass
+
+-----| testing_page20 |-----------------------
+# Truthiness - All & Any
+# pass
+
+-----| testing_page22 |-----------------------
+# Sorting
+# pass
+
+-----| testing_page23 |-----------------------
+# List Comprehensions
+# pass
+
+-----| testing_page24 |-----------------------
+# Generators and Iterators
+# pass
+
+-----| testing_page25 |-----------------------
+# Randomness
+# pass
+
+-----| testing_page26 |-----------------------
+# Regular Expression
+# pass
+
+-----| testing_page27 |-----------------------
+# Object Orientation
+# pass
+
+-----| testing_page28 |-----------------------
+# Functional Tools - Partial
+# pass
+
+-----| testing_page28 |-----------------------
+# Functional Tools - Map, Reduce, Filter
+# pass
+
+# pass= 25 fail= 1 %pass = 96%

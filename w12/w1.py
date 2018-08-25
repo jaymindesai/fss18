@@ -139,7 +139,10 @@ def testing_page14():
         "South Africa": ["Capetown", "Bloemfontein", "Pretoria"]
     }
 
-    assert str("India" in capitals) == "True"
+    # This test fails due to chaining comparision operators.
+    assert not "India" in capitals == True
+
+    assert "India" in capitals
     assert capitals["South Africa"][2] == "Pretoria"
     assert capitals.get("Japan", "Not Found") == "Not Found"
     assert len(capitals) == 5
@@ -155,15 +158,15 @@ def testing_page15():
     def is_default(dictionary):
         try:
             dictionary["Num1"] += 1
-            return "True"
+            return True
         except KeyError:
-            return "False"
+            return False
 
     test_dict = {}
     test_default_dict = defaultdict(int)
 
-    assert is_default(test_default_dict) == "True"
-    assert is_default(test_dict) == "False"
+    assert is_default(test_default_dict) == True
+    assert is_default(test_dict) == False
 
 
 @O.k
@@ -185,6 +188,8 @@ def testing_page17():
 
     assert len(some_list) == 8
     assert len(test_set) == 4
+    assert test_set == {1, 2, 3, 4}
+
 
 @O.k
 def testing_page17_again():
@@ -225,6 +230,138 @@ def testing_page18():
     assert test_ternary(0) == "Zero"
     assert test_ternary(1) == "Non-Zero"
 
+
+@O.k
+def testing_page19():
+    """Truthiness"""
+
+    empty_string = ""
+    non_empty_string = "A non empty string."
+    a_none = None
+
+    def is_true(string):
+        if string:
+            return "Yes"
+        else:
+            return "No"
+
+    assert is_true(empty_string) == "No"
+    assert non_empty_string and non_empty_string[0] == "A"
+    assert a_none or "Some" == "Some"
+
+
+@O.k
+def testing_page20():
+    """Truthiness - All & Any"""
+
+    assert not all([False, True, 100])
+    assert any([False, True, 100])
+    assert all([])
+    assert not any([])
+
+
+@O.k
+def testing_page22():
+    """Sorting"""
+
+    test_list = [4, 5, 3, 7, 6]
+    test_list.sort()
+    assert test_list == [3, 4, 5, 6, 7]
+
+
+@O.k
+def testing_page23():
+    """List Comprehensions"""
+
+    test_list = [x for x in range(6) if x % 2 != 0]
+    test_dict = {x: x + 1 for x in range(4)}
+    another_list = [(x, y) for x in range(3) for y in range(3)]
+    assert test_list == [1, 3, 5]
+    assert test_dict == {0: 1, 1: 2, 2: 3, 3: 4}
+    assert another_list[2] == (0, 2)
+
+
+@O.k
+def testing_page24():
+    """Generators and Iterators"""
+
+    from types import GeneratorType
+
+    def generate_integers(n):
+        for i in range(n):
+            yield i
+
+    test_generator = generate_integers(10)
+    assert isinstance(test_generator, GeneratorType)
+    assert next(test_generator) == 0
+    assert next(test_generator) == 1
+
+    generator_from_list_comprehensions = (x for x in range(3))
+    assert isinstance(generator_from_list_comprehensions, GeneratorType)
+
+
+@O.k
+def testing_page25():
+    """Randomness"""
+
+    from random import randrange
+
+    assert randrange(0, 4) in [0, 1, 2, 3]
+
+
+@O.k
+def testing_page26():
+    """Regular Expression"""
+
+    from re import search
+
+    assert search("S", "FSS")
+
+
+@O.k
+def testing_page27():
+    """Object Orientation"""
+
+    class Car:
+        def __init__(self, make="Some", model="Car"):
+            self.make = make
+            self.model = model
+
+        def name(self):
+            return self.make + " " + self.model
+
+    a_car = Car("Honda", "Accord")
+    another_car = Car()
+
+    assert a_car.name() == "Honda Accord"
+    assert another_car.name() == "Some Car"
+
+
+@O.k
+def testing_page28():
+    """Functional Tools - Partial"""
+
+    from functools import partial
+
+    def exponent(base, power):
+        return base ** power
+
+    cube_of = partial(exponent, power=3)
+    assert cube_of(3) == 27
+
+
+@O.k
+def testing_page28():
+    """Functional Tools - Map, Reduce, Filter"""
+
+    from functools import reduce
+
+    a_list = [1, 2, 3, 4, 5]
+    doubles = map(lambda x: x * 2, a_list)
+    even_doubles = filter(lambda x: x % 2 == 0, doubles)
+    sum_of_even_doubles = reduce(lambda x, y : x + y, even_doubles)
+
+    assert sum_of_even_doubles == 30
 
 
 if __name__ == "__main__":
