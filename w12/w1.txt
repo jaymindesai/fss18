@@ -105,7 +105,7 @@ AssertionError
 # Functional Tools - Partial
 # pass
 
------| testing_page28 |-----------------------
+-----| testing_page29 |-----------------------
 # Functional Tools - Map, Reduce, Filter
 # pass
 
