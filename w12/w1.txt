@@ -1,3 +1,4 @@
+
 -----| dummy_fail |-----------------------
 # this test should fail
 Traceback (most recent call last):
@@ -44,4 +45,24 @@ AssertionError
 # Tuples
 # pass
 
-# pass= 9 fail= 1 %pass = 90%
+-----| testing_page14 |-----------------------
+# Dictionaries
+# pass
+
+-----| testing_page15 |-----------------------
+# Default Dictionaries
+# pass
+
+-----| testing_page16 |-----------------------
+# Counters
+# pass
+
+-----| testing_page17 |-----------------------
+# Sets
+# pass
+
+-----| testing_page17_again |-----------------------
+# Membership Test
+# pass
+
+# pass= 14 fail= 1 %pass = 93%
