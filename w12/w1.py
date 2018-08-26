@@ -30,7 +30,7 @@ class O:
 
 @O.k
 def dummy_fail():
-    """this test should fail"""
+    """..this test should fail.."""
     assert 1 == 2
 
 
@@ -44,7 +44,7 @@ def testing_page5():
 
 @O.k
 def testing_page6():
-    """modules"""
+    """Modules"""
 
     from math import remainder
     test_variable = remainder(10, 4)
@@ -359,9 +359,74 @@ def testing_page29():
     a_list = [1, 2, 3, 4, 5]
     doubles = map(lambda x: x * 2, a_list)
     even_doubles = filter(lambda x: x % 2 == 0, doubles)
-    sum_of_even_doubles = reduce(lambda x, y : x + y, even_doubles)
+    sum_of_even_doubles = reduce(lambda x, y: x + y, even_doubles)
 
     assert sum_of_even_doubles == 30
+
+
+@O.k
+def testing_page30():
+    """Enumerate"""
+
+    numbers = ["Zero", "One", "Two", "Three", "Four", "Five"]
+
+    for i, number_string in enumerate(numbers):
+        if i == 2:
+            assert number_string == "Two"
+
+
+@O.k
+def testing_page31():
+    """Zip & Arguement Unpacking"""
+
+    first_list = [0, 1, 2]
+    second_list = [3, 4, 5]
+    zipped = list(zip(first_list, second_list))
+    assert zipped == [(0, 3), (1, 4), (2, 5)]
+    assert list(zip(*zipped)) == [(0, 1, 2), (3, 4, 5)]
+    assert list(zip((0, 3), (1, 4), (2, 5))) == [(0, 1, 2), (3, 4, 5)]
+
+
+@O.k
+def testing_page32():
+    """*Args"""
+
+    def sum_of_two(x, y):
+        return x + y
+
+    def sum_of_three(x, y, z):
+        return x + y + z
+
+    def square(func):
+        def do_it(*args):
+            return func(*args) ** 2
+
+        return do_it
+
+    test_two_args = square(sum_of_two)
+    test_three_args = square(sum_of_three)
+
+    assert test_two_args(2, 3) == 25
+    assert test_three_args(2, 3, 4) == 81
+
+
+@O.k
+def testing_page33():
+    """*KwArgs"""
+
+    branch_codes = {}
+
+    def add_items(**kwargs):
+        branch_codes.update(kwargs)
+
+    assert not branch_codes
+
+    add_items(csc="Computer Science", ece="Electrical & Computer Engineering")
+    assert branch_codes["csc"] == "Computer Science"
+
+    misc = {"abc": "Some Course", "xyz": "Another Course"}
+    add_items(**misc)
+    assert branch_codes["xyz"] == "Another Course"
 
 
 if __name__ == "__main__":

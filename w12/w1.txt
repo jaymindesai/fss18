@@ -1,6 +1,6 @@
 
 -----| dummy_fail |-----------------------
-# this test should fail
+# ..this test should fail..
 Traceback (most recent call last):
   File "/Users/jaymindesai/PycharmProjects/fss18/w12/w1.py", line 20, in k
     f()
@@ -14,7 +14,7 @@ AssertionError
 # pass
 
 -----| testing_page6 |-----------------------
-# modules
+# Modules
 # pass
 
 -----| testing_page7 |-----------------------
@@ -109,4 +109,20 @@ AssertionError
 # Functional Tools - Map, Reduce, Filter
 # pass
 
-# pass= 25 fail= 1 %pass = 96%
+-----| testing_page30 |-----------------------
+# Enumerate
+# pass
+
+-----| testing_page31 |-----------------------
+# Zip & Arguement Unpacking
+# pass
+
+-----| testing_page32 |-----------------------
+# *Args
+# pass
+
+-----| testing_page33 |-----------------------
+# *KwArgs
+# pass
+
+# pass= 29 fail= 1 %pass = 97%
