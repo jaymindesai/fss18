@@ -76,12 +76,11 @@ DATA2 = """
 def lines(src):
     """Return contents, one line at a time."""
 
-    content = src.replace(" ", "").split()
-    for i, line in enumerate(content):
-        if re.search('#', line):
-            content[i] = line.split('#')[0]
+    pattern = re.compile('#(.*)')
 
-    return content
+    return pattern.sub("", src) \
+        .replace(" ", "") \
+        .split()
 
 
 def rows(src):
@@ -100,12 +99,7 @@ def cols(src):
     """If a column name on row1 contains '?',
     then skip over that column."""
 
-    index = 0
-
-    for i, header in enumerate(src[0].split(',')):
-        if header.startswith('?'):
-            index = i
-
+    index = get_index('?', src[0].split(','))
     new_list = []
 
     for i, row in enumerate(src):
@@ -120,16 +114,18 @@ def prep(src):
     """If a column name on row1 contains '$',
     coerce strings in that column to a float."""
 
-    index = 0
-
-    for i, header in enumerate(src[0]):
-        if header.startswith('$'):
-            index = i
+    index = get_index('$', src[0])
 
     for row in src[1:]:
         row[index] = float(row[index])
 
     return src
+
+
+def get_index(char, data):
+    for i, row in enumerate(data):
+        if str(row).startswith(char):
+            return i
 
 
 # ----- test cases ----------------------------
