@@ -304,9 +304,21 @@ def testing_page24():
 def testing_page25():
     """Randomness"""
 
-    from random import randrange
+    from random import randrange, seed, random
 
     assert randrange(0, 4) in [0, 1, 2, 3]
+
+    seed(1)
+    pseudo_random_sequence_1 = [int(random() * 100) for _ in range(10)]
+
+    seed(2)
+    pseudo_random_sequence_2 = [int(random() * 100)  for _ in range(10)]
+
+    seed(1)
+    pseudo_random_sequence_3 = [int(random() * 100) for _ in range(10)]
+
+    assert not pseudo_random_sequence_1 == pseudo_random_sequence_2
+    assert pseudo_random_sequence_1 == pseudo_random_sequence_3
 
 
 @O.k
