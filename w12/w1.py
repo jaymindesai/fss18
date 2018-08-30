@@ -312,7 +312,7 @@ def testing_page25():
     pseudo_random_sequence_1 = [int(random() * 100) for _ in range(10)]
 
     seed(2)
-    pseudo_random_sequence_2 = [int(random() * 100)  for _ in range(10)]
+    pseudo_random_sequence_2 = [int(random() * 100) for _ in range(10)]
 
     seed(1)
     pseudo_random_sequence_3 = [int(random() * 100) for _ in range(10)]
