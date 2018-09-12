@@ -106,14 +106,13 @@ def cols(src):
      then skip over that column."""
 
     index = get_index('?', src[0].split(','))
-    new_list = []
 
     for i, row in enumerate(src):
-        new_row = row.split(',')
-        del new_row[index]
-        new_list.append(new_row)
+        row = row.split(',')
+        del row[index]
+        src[i] = row
 
-    return new_list
+    return src
 
 
 def prep(src):
