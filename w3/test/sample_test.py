@@ -14,12 +14,11 @@ def test_sample():
         samples.append(Sample(pow(2, i)))
 
     for i in range(1, 10000):
-        r = random()
         for s in samples:
-            s.sample_inc(r)
+            s.sample_inc(random())
 
     for s in samples:
         print(int(s.mx), s.nth(0.5))
-        assert 0.3 < s.nth(0.5) < 0.7
+        assert 0.4 < s.nth(0.5) < 0.6
 
 

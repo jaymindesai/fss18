@@ -1,5 +1,4 @@
 from math import pow
-
 from w3.src.sample import Sample
 
 
