@@ -12,7 +12,7 @@ class Sym:
         self._ent = None
 
     def syms(self, syms, func=None):
-        f = lambda x: x if func is None else func
+        f = func and func or (lambda x: x)
         if syms:
             for sym in syms:
                 self.sym_inc(f(sym))

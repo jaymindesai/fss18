@@ -17,7 +17,7 @@ class Num:
         self._some = Sample(mx)
 
     def nums(self, nums, func=None):
-        f = lambda x: x if func is None else func
+        f = func and func or (lambda x: x)
         if nums:
             for num in nums:
                 self.num_inc(f(num))
