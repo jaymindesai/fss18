@@ -9,6 +9,7 @@ class Num:
         self.mx = mx
         self.n = 0
         self.mu = 0
+        # TODO: What is m2?
         self.m2 = 0
         self.sd = 0
         self.lo = pow(10, 32)
