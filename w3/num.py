@@ -21,6 +21,7 @@ class Num:
         if numbers:
             for number in numbers:
                 self.num_inc(f(number))
+
         return self
 
     def num_inc(self, x):
@@ -51,9 +52,10 @@ class Num:
         return x
 
     def num_norm(self, x):
-        return 0.5 if x is '?' else (x - self.lo) / (self.hi - self.lo + pow(10, -32))
+        return x is '?' and 0.5 or (x - self.lo) / (self.hi - self.lo + pow(10, -32))
+        # return 0.5 if x is '?' else (x - self.lo) / (self.hi - self.lo + pow(10, -32))
 
-    # def num_expect(self, i, j, n):
+    # TODO: num_xpect method
 
 
 if __name__ == '__main__':
