@@ -17,23 +17,18 @@ class Sample:
     def sample_inc(self, x):
         self.n += 1
         now = len(self.some)
-
         if now < self.mx:
             self.sorted = False
             self.some.append(x)
-
-        elif random < now / self.n:
+        elif random() < now / self.n:
             self.sorted = False
-            # TODO: Why add 0.5?
-            self.some[floor(0.5 + random * now)] = x
-
+            self.some[floor(random() * now - 0.5)] = x
         return x
 
     def sample_sorted(self):
         if not self.sorted:
             self.sorted = True
             self.some.sort()
-
         return self.some
 
     def nth(self, n, other=None):
@@ -41,14 +36,12 @@ class Sample:
             s = other.sample_sorted()
         else:
             s = self.sample_sorted()
-
         # TODO: Why is percentile 'n' a decimal? Any specific use-case?
         return s[min(len(s), max(1, floor(0.5 + (len(s) * n))))]
 
     def nths(self, ns):
         if ns is None:
             ns = [0.1, 0.3, 0.5, 0.7, 0.9]
-
         return [self.nth(x) for x in ns]
 
     def sample_lt(self, s1, s2):
@@ -56,13 +49,4 @@ class Sample:
 
 
 if __name__ == "__main__":
-    test = Sample()
-    test.sample_inc(100)
-    test.sample_inc(300)
-    test.sample_inc(500)
-    test.sample_inc(510)
-    test.sample_inc(310)
-    test.sample_inc(110)
-    test.sample_inc(910)
-    print(test.sample_sorted())
-    print(test.nth(0.2))
+    pass

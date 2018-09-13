@@ -1,43 +1,39 @@
-from math import pow, log2
+from math import log2
+from collections import defaultdict
 
 
 class Sym:
 
     def __init__(self):
-        self.counts = {}
+        self.counts = defaultdict(int)
         self.mode = None
         self.most = 0
         self.n = 0
         self._ent = None
 
-    def syms(self, f, symbols):
-        f = lambda x: x if f is None else f
-        if symbols:
-            for symbol in symbols:
-                self.sym_inc(f(symbol))
-
+    def syms(self, syms, func=None):
+        f = lambda x: x if func is None else func
+        if syms:
+            for sym in syms:
+                self.sym_inc(f(sym))
         return self
 
     def sym_inc(self, x):
         if x != '?':
             self._ent = None
             self.n += 1
-            old = self.counts[x]
-            new = old and old + 1 or 1
-            self.counts[x] = new
-            if new > self.most:
-                self.most = new
+            self.counts[x] += 1
+            if self.counts[x] > self.most:
+                self.most = self.counts[x]
                 self.mode = x
-
         return x
 
     def sym_dec(self, x):
-        if x != '?':
+        if x != '?' and x in self.counts:
             self._ent = None
             if self.n > 0:
                 self.n -= 1
-                self.counts[x] -=1
-
+                self.counts[x] -= 1
         return x
 
     def sym_ent(self):
@@ -46,7 +42,6 @@ class Sym:
             for n in self.counts.values():
                 p = n / self.n
                 self._ent -= p * log2(p)
-
         return self._ent
 
 
