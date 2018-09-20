@@ -22,7 +22,7 @@ class Data:
                 c = len(self._use) + 1
                 self._use[c] = i  # c = col number in data, i = index of col in csv file
                 self.names[c] = col
-                if re.match('[<>%$]', col):
+                if re.match('[<>$]', col):
                     self.nums[c] = Num()
                 else:
                     self.syms[c] = Sym()
