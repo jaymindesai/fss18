@@ -1,4 +1,3 @@
-from csv import reader
 from prettytable import PrettyTable
 from utils.test_rig import O
 from utils.reader import rows, lines, cols
