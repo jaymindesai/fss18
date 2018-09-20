@@ -7,7 +7,7 @@ class Data:
 
     def __init__(self):
         self.w = {}  # weights of columns
-        self.name = {}  # names of columns
+        self.names = {}  # names of columns
         self.rows = {}  # data in tabular form - using dictionary instead of a 2D array for faster retrieval
         self.syms = {}  # data of symbol type columns
         self. nums = {}  # data of number type columns
@@ -17,13 +17,14 @@ class Data:
 
     def header(self, cells):
         """Parse columns from header row and update metadata"""
-        for i, col in enumerate(cells[0]):
-            if not re.match('[#?]', col):
+        for i, col in enumerate(cells):
+            if not re.match('\?', col):
                 c = len(self._use) + 1
                 self._use[c] = i  # c = col number in data, i = index of col in csv file
-                self.name[c] = col
+                self.names[c] = col
                 if re.match('[<>%$]', col):
                     self.nums[c] = Num()
+                else:
                     self.syms[c] = Sym()
                 if re.match('<', col):
                     self.w[c] = -1
@@ -43,7 +44,7 @@ class Data:
             if not re.search('\?', x):
                 if self.nums.get(col) is not None:
                     x = float(x)
-                    self.nums[col].num_inc(x)
+                    self.nums.get(col).num_inc(x)
                 else:
-                    self.syms[col].sys_inc(x)
-            self.rows[r][col] = x
+                    self.syms.get(col).sym_inc(x)
+            self.rows[r].append(x)
