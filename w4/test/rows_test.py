@@ -28,7 +28,7 @@ def print_table(table: Data):
 
 
 def prep_table(file):
-    """Cleans the data in csv file and populates Data object with header and rows. """
+    """Cleans the data in csv file and populates Data object with header and rows."""
     table_data = Data()
     file_data = cols(rows(lines(s=file)))
     for i, row in enumerate(file_data):
