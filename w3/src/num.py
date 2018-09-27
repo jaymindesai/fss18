@@ -12,7 +12,7 @@ class Num:
         self.m2 = 0
         self.sd = 0
         self.lo = pow(10, 32)
-        self.hi = pow(-10, 32)
+        self.hi = pow(10, -32)
         self.w = 1
         self._some = Sample(mx)
 
@@ -49,7 +49,7 @@ class Num:
         return x
 
     def num_norm(self, x):
-        return (x - self.lo) / (self.hi - self.lo + pow(10, -32))
+        return x is '?' and 0.5 or (x - self.lo) / (self.hi - self.lo + pow(10, -32))
 
     # TODO: num_xpect method
 

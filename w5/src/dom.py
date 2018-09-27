@@ -8,8 +8,7 @@ from w4.src.data import Data
 class Dom:
 
     def dom(self, row1, row2, data):
-        s1 = 0
-        s2 = 0
+        s1, s2 = 0, 0
         n = len(data.w)
         for c, w in data.w.items():
             a0 = row1[c - 1]
@@ -21,12 +20,13 @@ class Dom:
         return (s1 / n) < (s2 / n)
 
     def dom_score(self, data: Data):
+        """Calculate the domination score for required columns"""
         n = 100  # Default number of samples for Dom
         c = len(data.names) + 1
         data.names[c] = '>dom'
         for i in range(0, len(data.rows)):
             row1 = data.rows[i]
-            row1.insert(c - 1, 0)
+            row1.append(0)
             for s in range(1, n+1):
                 row2 = data.another(row1)
                 s = self.dom(row1, row2, data) and 1/n or 0
