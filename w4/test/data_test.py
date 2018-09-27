@@ -1,6 +1,5 @@
 from prettytable import PrettyTable
 from utils.test_rig import O
-from utils.reader import rows, lines, cols
 from w4.src.data import Data
 
 

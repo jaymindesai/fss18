@@ -11,12 +11,12 @@ class Data:
         self.names = {}  # names of columns
         self.rows = {}  # data in tabular form - using dictionary instead of a 2D array for faster retrieval
         self.syms = {}  # data of symbol type columns
-        self. nums = {}  # data of number type columns
+        self.nums = {}  # data of number type columns
         self.clazz = None  # classifier column
         self._use = {}  # columns in use => {col_in_data : col_in_csv}
         self.indeps = []  # independent columns
         if file:
-            self.prep_data(file)
+            self.add_rows(file)
 
     def header(self, cells):
         """Parse columns from header row and update metadata"""
@@ -52,13 +52,38 @@ class Data:
                     self.syms.get(col).sym_inc(x)
             self.rows[r].append(x)
 
-    def prep_data(self, file):
+    def col(self, cells):
+        """Returns the list of column data to be appended to existing rows"""
+        temp = []
+        for i, x in enumerate(cells):
+            if not re.search('\?', x):
+                if self.nums.get(i + len(self.names)) is not None:
+                    x = float(x)
+                    self.nums.get(i + len(self.names)).num_inc(x)
+                else:
+                    self.syms.get(i + len(self.names)).sym_inc(x)
+            temp.append(x)
+        return temp
+
+    def add_rows(self, file):
         """Cleans the data in file and populates Data object with header and rows"""
         for i, row in enumerate(cols(rows(lines(s=file)))):
             if i == 0:
                 self.header(row)
             else:
                 self.row(row)
+        return self
+
+    def add_cols(self, file):
+        """Appends new column data to existing rows"""
+        col_data = []
+        for i, to_append in enumerate(cols(rows(lines(s=file)))):
+            if i == 0:
+                self.header(to_append)
+            else:
+                col_data.append(self.col(to_append))
+        for i in range(0, len(col_data)):
+            self.rows[i] += col_data[i]
         return self
 
 
