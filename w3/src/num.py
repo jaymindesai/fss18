@@ -49,7 +49,7 @@ class Num:
         return x
 
     def num_norm(self, x):
-        return x is '?' and 0.5 or (x - self.lo) / (self.hi - self.lo + pow(10, -32))
+        return (x - self.lo) / (self.hi - self.lo + pow(10, -32))
 
     # TODO: num_xpect method
 
