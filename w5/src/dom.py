@@ -1,8 +1,8 @@
-# Creating a class with function to calculate the domination score.
-# Instead of adding this methods to Data class.
-
 from math import pow
+
 from w4.src.data import Data
+
+DOM_SAMPLES = 100  # Default number of samples for Dom
 
 
 def dom(row1, row2, data):
@@ -20,7 +20,7 @@ def dom(row1, row2, data):
 
 def dom_score(data: Data):
     """Calculate the domination score for required columns"""
-    n = 100  # Default number of samples for Dom
+    n = DOM_SAMPLES
     c = len(data.names)
     data.names[c] = '>dom'
     for i in range(len(data.rows)):

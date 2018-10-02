@@ -1,9 +1,10 @@
 import re
-from typing import Dict
 from random import randrange
+from typing import Dict, List
+
+from utils.reader import rows, lines, cols
 from w3.src.num import Num
 from w3.src.sym import Sym
-from utils.reader import rows, lines, cols
 
 
 class Data:
@@ -11,7 +12,7 @@ class Data:
     def __init__(self, file=None):
         self.w = {}  # weights of columns
         self.names = {}  # names of columns
-        self.rows = {}  # data in tabular form - using dictionary instead of a 2D array for faster retrieval
+        self.rows = []  # rows
         self.syms: Dict[int, Sym] = {}  # data of symbol type columns
         self.nums: Dict[int, Num] = {}  # data of number type columns
         self.clazz = None  # classifier column
@@ -43,7 +44,7 @@ class Data:
     def _row(self, cells):
         """Add rows to Data"""
         r = len(self.rows)
-        self.rows[r] = []
+        self.rows.append([])
         for col, col_csv in self._use.items():
             x = cells[col_csv]
             if not re.search('\?', x):
@@ -79,7 +80,12 @@ class Data:
     def add_cols(self, file):
         """Appends new column data to existing rows"""
         col_data = []
-        for i, to_append in enumerate(cols(rows(lines(s=file)))):
+        d = None
+        if isinstance(file, List):
+            d = file
+        else:
+            d = cols(rows(lines(s=file)))
+        for i, to_append in enumerate(d):
             if i == 0:
                 self._header(to_append)
             else:

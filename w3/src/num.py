@@ -1,4 +1,5 @@
 from math import pow
+
 from w3.src.sample import Sample
 
 
@@ -39,7 +40,7 @@ class Num:
         return x
 
     def num_dec(self, x):
-        if x != '?' or self.n != 1:
+        if x != '?' and self.n != 1:
             self.n -= 1
             d = x - self.mu
             self.mu -= d / self.n
@@ -51,7 +52,9 @@ class Num:
     def num_norm(self, x):
         return x is '?' and 0.5 or (x - self.lo) / (self.hi - self.lo + pow(10, -32))
 
-    # TODO: num_xpect method
+    def num_xpect(self, other):
+        total = self.n + other.n + pow(10, -32)
+        return (self.n / total * self.sd) + (other.n / total * other.sd)
 
 
 if __name__ == '__main__':

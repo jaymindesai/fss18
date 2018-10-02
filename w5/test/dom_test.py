@@ -1,4 +1,5 @@
 from prettytable import PrettyTable
+
 from utils.test_rig import O
 from w4.src.data import Data
 from w5.src.dom import dom_score
@@ -14,12 +15,10 @@ def print_data(headers, rows, title):
 
 def sort_rows(rows):
     """Some extra effort to sort rows as rows is a dictionary"""
-    to_sort = []
-    for _, r in rows.items():
-        to_sort.append(r)
+    for r in rows:
         r[-1] = round(r[-1], 2)
-    to_sort.sort(key=lambda x: x[-1], reverse=True)
-    return to_sort
+    rows.sort(key=lambda x: x[-1], reverse=True)
+    return rows
 
 
 @O.k
