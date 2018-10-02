@@ -1,10 +1,11 @@
 from prettytable import PrettyTable
+
 from utils.test_rig import O
 from w4.src.data import Data
 
 
 def print_table(table: Data):
-    """Prints all Num and Sym data in a tabular format."""
+    """Prints all Num and Sym data in a tabular format"""
     print("\n")
     sym_table = PrettyTable(title="symbolic attributes")
     sym_table.field_names = ['col_index', 'col_name', 'n', 'mode', 'frequency']
