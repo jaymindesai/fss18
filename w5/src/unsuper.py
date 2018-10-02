@@ -15,7 +15,7 @@ def unsuper(data: Data):
 
     def band(c, lo, hi):
         """Combine values falling in the same sd interval"""
-        if lo == 1:
+        if lo == 0:
             return '..' + str(rows[hi][c])
         elif hi == most:
             return str(rows[lo][c]) + '..'
@@ -27,10 +27,10 @@ def unsuper(data: Data):
         cut = None
         if (hi - lo) > 2 * enough:
             l, r = Num(), Num()
-            for i in range(lo, hi + 1):
+            for i in range(lo, hi):
                 r.num_inc(rows[i][c])
             best = r.sd
-            for i in range(lo, hi + 1):
+            for i in range(lo, hi):
                 x = rows[i][c]
                 l.num_inc(x)
                 r.num_dec(x)
@@ -54,19 +54,19 @@ def unsuper(data: Data):
             for r in range(lo, hi + 1):
                 rows[r][c] = b
 
-    def stop(c, rs):
+    def stop(c):
         """Determine where to stop"""
-        for i in range(len(rs) - 1, 1, -1):
-            if not rs[i][c] == '?':
+        for i in range(len(rows) - 1, 0, -1):
+            if rows[i][c] != '?':
                 return i
         return 0
 
     for c in data.indeps:
         if c in data.nums:
             rows.sort(key=lambda x: 10 ** 32 if x[c] == '?' else x[c])
-            most = stop(c, rows)
+            most = stop(c)
             print('\n_________ most(' + str(data.names[c] + ') = ' + str(most) + ' _________\n'))
-            cuts(c, 1, most, '|.. ')
+            cuts(c, 0, most, '|.. ')
             data.names[c] = data.names[c][1:]
 
     replace_discretized_column(data, rows)
