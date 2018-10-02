@@ -57,12 +57,13 @@ class Data:
     def _col(self, cells):
         """Returns the list of column data to be appended to existing rows"""
         temp = []
-        for i, x in enumerate(cells):
+        for x in cells:
             if not re.search('\?', x):
-                if self.nums.get(i + len(self.names)) is not None:
-                    self.nums.get(i + len(self.names)).num_inc(float(x))
+                if self.nums.get(len(self.names) - 1) is not None:
+                    x = float(x)
+                    self.nums.get(len(self.names) - 1).num_inc(x)
                 else:
-                    self.syms.get(i + len(self.names)).sym_inc(x)
+                    self.syms.get(len(self.names) - 1).sym_inc(x)
             temp.append(x)
         return temp
 
