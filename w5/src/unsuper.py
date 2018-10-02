@@ -8,11 +8,13 @@ UNSUP_MARGIN = 1.05
 
 
 def unsuper(data: Data):
+    """Discretizing independent continuous numeric columns"""
     rows = data.rows
     enough = pow(len(rows), UNSUP_ENOUGH)
     margin = UNSUP_MARGIN
 
     def band(c, lo, hi):
+        """Combine values falling in the same sd interval"""
         if lo == 1:
             return '..' + str(rows[hi][c])
         elif hi == most:
@@ -21,6 +23,7 @@ def unsuper(data: Data):
             return str(rows[lo][c]) + '..' + str(rows[hi][c])
 
     def argmin(c, lo, hi):
+        """Determine the cut"""
         cut = None
         if (hi - lo) > 2 * enough:
             l, r = Num(), Num()
@@ -38,6 +41,7 @@ def unsuper(data: Data):
         return cut
 
     def cuts(c, lo, hi, pre):
+        """Based on the cuts, replace temp values with discretized intervals"""
         txt = pre + str(rows[lo][c]) + '.. ' + str(rows[hi][c])
         cut = argmin(c, lo, hi)
         if cut:
@@ -51,6 +55,7 @@ def unsuper(data: Data):
                 rows[r][c] = b
 
     def stop(c, rs):
+        """Determine where to stop"""
         for i in range(len(rs) - 1, 1, -1):
             if not rs[i][c] == '?':
                 return i
@@ -60,7 +65,7 @@ def unsuper(data: Data):
         if c in data.nums:
             rows.sort(key=lambda x: 10 ** 32 if x[c] == '?' else x[c])
             most = stop(c, rows)
-            print('\n________ most(' + str(data.names[c] + ') = ' + str(most) + ' ________\n'))
+            print('\n_________ most(' + str(data.names[c] + ') = ' + str(most) + ' _________\n'))
             cuts(c, 1, most, '|.. ')
             data.names[c] = data.names[c][1:]
 
