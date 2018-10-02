@@ -41,6 +41,7 @@ class Sample:
             ns = [0.1, 0.3, 0.5, 0.7, 0.9]
         return [self.nth(x) for x in ns]
 
+    # TODO: Does this method just compares two samples?
     def sample_lt(self, s):
         return self.nth(0.5) < s.nth(0.5)
 

@@ -1,10 +1,7 @@
 from prettytable import PrettyTable
 from utils.test_rig import O
 from w4.src.data import Data
-from w5.src.dom import Dom
-
-
-dom = Dom()
+from w5.src.dom import dom_score
 
 
 def print_data(headers, rows, title):
@@ -16,6 +13,7 @@ def print_data(headers, rows, title):
 
 
 def sort_rows(rows):
+    """Some extra effort to sort rows as rows is a dictionary"""
     to_sort = []
     for _, r in rows.items():
         to_sort.append(r)
@@ -28,7 +26,7 @@ def sort_rows(rows):
 def weather_dom_scores():
     """print the rows in descending order of their dom score"""
     data = Data(file='../data/weatherLong.csv')
-    data = dom.dom_score(data)
+    data = dom_score(data)
     headers = []
     for _, c in data.names.items():
         headers.append(c)
@@ -37,9 +35,9 @@ def weather_dom_scores():
 
 @O.k
 def auto_dom_scores():
-    """print the rows in descending order of their dom score"""
+    """print the first and last 10 rows in descending order of their dom score"""
     data = Data(file='../data/auto.csv')
-    data = dom.dom_score(data)
+    data = dom_score(data)
     headers = []
     for _, c in data.names.items():
         headers.append(c)

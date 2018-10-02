@@ -1,5 +1,5 @@
 import re
-from typing import Dict, List
+from typing import Dict
 from random import randrange
 from w3.src.num import Num
 from w3.src.sym import Sym
@@ -24,7 +24,7 @@ class Data:
         """Parse columns from header row and update metadata"""
         for i, col in enumerate(cells):
             if not re.match('\?', col):
-                c = len(self._use) + 1
+                c = len(self._use)
                 self._use[c] = i  # c = col number in data, i = index of col in csv file
                 self.names[c] = col
                 if re.match('[<>$]', col):
@@ -60,8 +60,7 @@ class Data:
         for i, x in enumerate(cells):
             if not re.search('\?', x):
                 if self.nums.get(i + len(self.names)) is not None:
-                    x = float(x)
-                    self.nums.get(i + len(self.names)).num_inc(x)
+                    self.nums.get(i + len(self.names)).num_inc(float(x))
                 else:
                     self.syms.get(i + len(self.names)).sym_inc(x)
             temp.append(x)
@@ -84,13 +83,13 @@ class Data:
                 self._header(to_append)
             else:
                 col_data.append(self._col(to_append))
-        for i in range(0, len(col_data)):
+        for i in range(len(col_data)):
             self.rows[i] += col_data[i]
         return self
 
     def another(self, row):
         """Randomly returns another row that is different from this row"""
-        other = randrange(0, len(self.rows))
+        other = randrange(len(self.rows))
         if row == other:
             return self.another(row)
         return self.rows[other]

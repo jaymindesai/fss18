@@ -42,7 +42,7 @@
 
 -----| auto_dom_scores |------------------------------------------------------------------------
 
-# print the rows in descending order of their dom score
+# print the first and last 10 rows in descending order of their dom score
 
 +-----------------------------------------------------------------------------------------------+
 |                                            auto.csv                                           |
