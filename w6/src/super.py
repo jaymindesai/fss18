@@ -8,7 +8,7 @@ SUP_ENOUGH = 0.5
 SUP_MARGIN = 1.05
 
 
-def superr(data):
+def super(data):
     """Discretizing independent continuous numeric columns based on a particular goal"""
     data = dom_score(data)  # Add dom scores to data
     rows = data.rows
