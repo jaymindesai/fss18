@@ -26,9 +26,10 @@ def dom_score(data: Data):
     for i in range(len(data.rows)):
         row1 = data.rows[i]
         row1.append(0)
-        for s in range(n):
+        for j in range(n):
             row2 = data.another(row1)
             s = dom(row1, row2, data) and 1/n or 0
             row1[c] += s
         data.rows[i] = row1
+        data.rows[i][-1] = round(data.rows[i][-1], 2)
     return data

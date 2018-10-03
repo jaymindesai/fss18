@@ -1,4 +1,4 @@
-from math import pow
+from math import pow, sqrt
 
 from w3.src.sample import Sample
 
@@ -36,7 +36,7 @@ class Num:
             if x < self.lo:
                 self.lo = x
             if self.n >= 2:
-                self.sd = pow((self.m2 / (self.n - 1 + pow(10, -32))), 0.5)
+                self.sd = sqrt(self.m2 / (self.n - 1 + pow(10, -32)))
         return x
 
     def num_dec(self, x):
@@ -45,8 +45,10 @@ class Num:
             d = x - self.mu
             self.mu -= d / self.n
             self.m2 -= d * (x - self.mu)
+            # TODO: Can this be negative?
+            self.m2 = abs(self.m2)
             if self.n >= 2:
-                self.sd = pow((self.m2 / (self.n - 1 + pow(10, -32))), 0.5)
+                self.sd = sqrt(self.m2 / (self.n - 1 + pow(10, -32)))
         return x
 
     def num_norm(self, x):
