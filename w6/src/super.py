@@ -56,7 +56,7 @@ def super(data):
         return cut, mu, besty
 
     def cuts(c, lo, hi, pre):
-        """Based on the cuts, replace temp values with discretized intervals"""
+        """Based on the cuts, replace column values with discretized intervals"""
         txt = pre + str(rows[lo][c]) + '..' + str(rows[hi][c])
         cut, mu, dom_sd = argmin(c, lo, hi)
         if cut:
