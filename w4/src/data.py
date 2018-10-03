@@ -80,11 +80,7 @@ class Data:
     def add_cols(self, file):
         """Appends new column data to existing rows"""
         col_data = []
-        d = None
-        if isinstance(file, List):
-            d = file
-        else:
-            d = cols(rows(lines(s=file)))
+        d = file if isinstance(file, List) else cols(rows(lines(s=file)))
         for i, to_append in enumerate(d):
             if i == 0:
                 self._header(to_append)
