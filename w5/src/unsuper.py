@@ -57,7 +57,7 @@ def unsuper(data: Data):
 
     def stop(c):
         """Determine where to stop"""
-        for i in range(len(rows) - 1, 0, -1):
+        for i in range(len(rows) - 1, -1, -1):
             if rows[i][c] != '?':
                 return i
         return 0
