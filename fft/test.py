@@ -40,8 +40,8 @@ def calculate_ig(column_name, data: pd.DataFrame):
         cond_ent = 0
         for c in counts.index:
             weight = counts[c] / total
-            ent = weight * entropy(data[column_values == c]['class'])
-            cond_ent += ent
+            ent = entropy(data[column_values == c]['class'])
+            cond_ent += weight * ent
             if ent < min_ent:
                 min_ent = ent
                 split = c
