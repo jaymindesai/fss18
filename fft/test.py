@@ -6,14 +6,14 @@ import pandas as pd
 import scipy.stats as stats
 
 
-def entropy(attribute: pd.Series):
+def entropy(attribute):
     """Calculate Entropy"""
     counts = attribute.value_counts()
     prob = counts / len(attribute)
     return stats.entropy(prob, base=2)
 
 
-def information_gain(column_name, data: pd.DataFrame):
+def information_gain(column_name, data):
     """Calculate Information Gain"""
     data.sort_values(by=column_name, inplace=True)
     column_values = data[column_name]
