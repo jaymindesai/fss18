@@ -51,22 +51,24 @@ def information_gain(column_name, data: pd.DataFrame):
         return ent_class - cond_ent, cut
 
 
+def find_split(data):
+    info_gains = {}
+    for column in data.columns[:-1]:
+        gain, cut = information_gain(column, data)
+        print('\n')
+        print('Feature:', column)
+        print('\n')
+        print(data.sort_values(by=column)[[column, 'class']])
+        print('\n')
+        print('Info Gain:', gain, '| Cut:', cut)
+        print('\n')
+        print('-----------------------------------------------')
+        info_gains[column] = (gain, cut)
+    print('\n')
+    print('Info Gains:', info_gains)
+
+
 df = pd.read_csv('data/weather.csv')
-
-info_gains = {}
-for column in df.columns[:-1]:
-    gain, split = information_gain(column, df)
-    print('\n')
-    print('Feature:', column)
-    print('\n')
-    print(df.sort_values(by=column)[[column, 'class']])
-    print('\n')
-    print('Info Gain:', gain, '| Cut:', split)
-    print('\n')
-    print('-----------------------------------------------')
-    info_gains[column] = (gain, split)
-
-print('\n')
-print('Info Gains:', info_gains)
+find_split(df)
 
 
