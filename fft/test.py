@@ -5,22 +5,24 @@ from math import inf
 import pandas as pd
 import scipy.stats as stats
 
-df = pd.read_csv('data/weather.csv')
 
 def entropy(attribute: pd.Series):
+    """Calculate Entropy"""
     counts = attribute.value_counts()
     prob = counts / len(attribute)
     return stats.entropy(prob, base=2)
 
 
-def calculate_ig(column_name, data: pd.DataFrame):
+def information_gain(column_name, data: pd.DataFrame):
+    """Calculate Information Gain"""
     data.sort_values(by=column_name, inplace=True)
-    h_clazz = entropy(data['class'])
     column_values = data[column_name]
+    ent_class = entropy(data['class'])  # Entropy of Class
     total = len(column_values)
     min_ent = inf
-    split = None
+    cut = None
     if re.match('\$', column_name):
+        # Calculate IG of continuous attributes
         first = 1
         last = len(data) - 1
         for _, row in islice(data.iterrows(), first, last):
@@ -33,9 +35,10 @@ def calculate_ig(column_name, data: pd.DataFrame):
             cond_ent = (weight1 * ent1) + (weight2 * ent2)
             if cond_ent < min_ent:
                 min_ent = cond_ent
-                split = row[column_name]
-        return h_clazz - min_ent, split
+                cut = row[column_name]
+        return ent_class - min_ent, cut
     else:
+        # Calculate IG of discrete attributes
         counts = column_values.value_counts()
         cond_ent = 0
         for c in counts.index:
@@ -44,24 +47,26 @@ def calculate_ig(column_name, data: pd.DataFrame):
             cond_ent += weight * ent
             if ent < min_ent:
                 min_ent = ent
-                split = c
-        return h_clazz - cond_ent, split
+                cut = c
+        return ent_class - cond_ent, cut
 
+
+df = pd.read_csv('data/weather.csv')
 
 info_gains = {}
 for column in df.columns[:-1]:
-    gain, split = calculate_ig(column, df)
+    gain, split = information_gain(column, df)
     print('\n')
     print('Feature:', column)
     print('\n')
     print(df.sort_values(by=column)[[column, 'class']])
     print('\n')
-    print('Info Gain: ', gain, '| Split: ', split)
+    print('Info Gain:', gain, '| Cut:', split)
     print('\n')
     print('-----------------------------------------------')
     info_gains[column] = (gain, split)
 
 print('\n')
-print('Info Gains: ', info_gains)
+print('Info Gains:', info_gains)
 
 
