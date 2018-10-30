@@ -52,7 +52,7 @@ info_gains = {}
 for column in df.columns[:-1]:
     gain, split = calculate_ig(column, df)
     print('\n')
-    print('Feature', column)
+    print('Feature:', column)
     print('\n')
     print(df.sort_values(by=column)[[column, 'class']])
     print('\n')
