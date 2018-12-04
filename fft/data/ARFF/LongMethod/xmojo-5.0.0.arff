@@ -1,0 +1,95 @@
+@relation xmojo-5.0.0
+
+@attribute CDISP_method numeric
+@attribute ATLD_method numeric
+@attribute NOAM_type numeric
+@attribute isStatic_type {0,1}
+@attribute NOI_project numeric
+@attribute NOCS_project numeric
+@attribute CFNAMM_type numeric
+@attribute number_not_final_not_static_methods numeric
+@attribute number_public_visibility_methods numeric
+@attribute number_constructor_NotDefaultConstructor_methods numeric
+@attribute number_final_methods numeric
+@attribute NOPK_project numeric
+@attribute LCOM5_type numeric
+@attribute LOC_project numeric
+@attribute MaMCL_method numeric
+@attribute isStatic_method {0,1}
+@attribute LOC_type numeric
+@attribute number_not_abstract_not_final_methods numeric
+@attribute CBO_type numeric
+@attribute number_not_final_static_methods numeric
+@attribute NOP_method numeric
+@attribute FDP_method numeric
+@attribute NOM_project numeric
+@attribute DIT_type numeric
+@attribute number_protected_visibility_methods numeric
+@attribute LAA_method numeric
+@attribute num_static_not_final_attributes numeric
+@attribute number_constructor_DefaultConstructor_methods numeric
+@attribute AMWNAMM_type numeric
+@attribute NOMNAMM_project numeric
+@attribute LOC_package numeric
+@attribute NIM_type numeric
+@attribute NOI_package numeric
+@attribute TCC_type numeric
+@attribute number_static_methods numeric
+@attribute NOAV_method numeric
+@attribute WOC_type numeric
+@attribute NOM_type numeric
+@attribute number_package_visibility_methods numeric
+@attribute number_final_not_static_methods numeric
+@attribute RFC_type numeric
+@attribute number_final_static_methods numeric
+@attribute MAXNESTING_method numeric
+@attribute number_protected_visibility_attributes numeric
+@attribute NOA_type numeric
+@attribute NOCS_package numeric
+@attribute NOII_type numeric
+@attribute ATFD_method numeric
+@attribute ATFD_type numeric
+@attribute num_final_not_static_attributes numeric
+@attribute number_private_visibility_attributes numeric
+@attribute number_standard_design_methods numeric
+@attribute NMO_type numeric
+@attribute CFNAMM_method numeric
+@attribute NMCS_method numeric
+@attribute FANOUT_method numeric
+@attribute num_final_attributes numeric
+@attribute AMW_type numeric
+@attribute CINT_method numeric
+@attribute number_private_visibility_methods numeric
+@attribute CM_method numeric
+@attribute LOCNAMM_type numeric
+@attribute CC_method numeric
+@attribute CLNAMM_method numeric
+@attribute NOLV_method numeric
+@attribute number_package_visibility_attributes numeric
+@attribute CYCLO_method numeric
+@attribute WMC_type numeric
+@attribute NOM_package numeric
+@attribute num_final_static_attributes numeric
+@attribute NOPA_type numeric
+@attribute num_static_attributes numeric
+@attribute FANOUT_type numeric
+@attribute NOCS_type numeric
+@attribute LOC_method numeric
+@attribute num_not_final_not_static_attributes numeric
+@attribute WMCNAMM_type numeric
+@attribute MeMCL_method numeric
+@attribute NOC_type numeric
+@attribute number_abstract_methods numeric
+@attribute NOMNAMM_package numeric
+@attribute NOMNAMM_type numeric
+@attribute SMELLS {False,True}
+
+@data
+0,1,0,0,25,110,0,2,1,1,0,9,1,31037,0,0,21,2,0,0,2,0,1199,3,1,1,0,0,1.5,951,4403,63,0,1,0,3,1,2,0,0,2,0,1,0,1,7,0,0,0,0,1,1,0,0,0,0,0,1.5,0,0,1,21,1,0,2,0,1,3,88,0,0,0,0,0,6,1,3,0,0,0,78,2,False
+0,1,0,0,25,110,0,2,1,1,0,9,1,31037,0,0,21,2,0,0,1,0,1199,3,1,1,0,0,1.5,951,4403,63,0,1,0,2,1,2,0,0,2,0,1,0,1,7,0,0,0,0,1,1,0,0,0,0,0,1.5,0,0,0,21,0,0,1,0,2,3,88,0,0,0,0,0,8,1,3,0,0,0,78,2,False
+0,4,6,0,25,110,29,30,20,1,0,9,0.896552,31037,0,0,1323,30,27,0,1,0,1199,1,1,1,0,0,8.416667,951,4403,0,0,0.636842,0,9,0.535714,30,0,0,69,0,6,0,8,7,5,0,11,0,0,23,0,0,0,0,0,10.533333,0,9,4,815,2,2,5,0,17,316,88,0,8,0,23,0,74,8,202,0,0,0,78,24,False
+0,1,6,0,25,110,29,30,20,1,0,9,0.896552,31037,0,0,1323,30,27,0,0,0,1199,1,1,1,0,0,8.416667,951,4403,0,0,0.636842,0,1,0.535714,30,0,0,69,0,1,0,8,7,5,0,11,0,0,23,0,0,0,0,0,10.533333,0,9,10,815,1,0,0,0,1,316,88,0,8,0,23,0,4,8,202,0,0,0,78,24,True
+1,2,6,0,25,110,29,30,20,1,0,9,0.896552,31037,0,0,1323,30,27,0,0,0,1199,1,1,1,0,0,8.416667,951,4403,0,0,0.636842,0,7,0.535714,30,0,0,69,0,1,0,8,7,5,0,11,0,0,23,0,1,0,1,0,10.533333,1,9,0,815,0,1,2,0,1,316,88,0,8,0,23,0,12,8,202,0,0,0,78,24,False
+1,2,6,0,25,110,29,30,20,1,0,9,0.896552,31037,0,0,1323,30,27,0,3,4,1199,1,1,0.333333,0,0,8.416667,951,4403,0,0,0.636842,0,33,0.535714,30,0,0,69,0,8,0,8,7,5,4,11,0,0,23,0,6,0,10,0,10.533333,10,9,0,815,0,5,32,0,50,316,88,0,8,0,23,0,244,8,202,0,0,0,78,24,False
+0.8,3,6,0,25,110,29,30,20,1,0,9,0.896552,31037,0,0,1323,30,27,0,1,5,1199,1,1,0.3,0,0,8.416667,951,4403,0,0,0.636842,0,36,0.535714,30,0,0,69,0,8,0,8,7,5,7,11,0,0,23,0,8,0,12,0,10.533333,15,9,0,815,0,1,29,0,44,316,88,0,8,0,23,0,208,8,202,0,0,0,78,24,False
+0.714286,1,3,0,25,110,42,44,35,2,0,9,0.863787,31037,0,0,2827,44,33,0,4,1,1199,1,0,0.5,1,0,8.902439,951,4403,0,0,0.685606,0,18,0.914286,44,0,0,95,0,6,0,7,7,1,1,9,0,7,39,0,6,0,5,0,8.431818,7,9,0,2758,0,3,18,0,19,371,88,0,0,1,26,0,120,6,365,0,0,0,78,41,False

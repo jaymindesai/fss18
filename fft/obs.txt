@@ -1,0 +1,153 @@
+Data Class => Best Feature: NOPK_project | Cut: 29 | Info Gain: 0.1299
+
+Feature Envy => Best Feature: ATFD_method | Cut: 7 | Info Gain: 0.9352
+
+God Class => Best Feature: LOCNAMM_type | Cut: 278 | Info Gain: 0.9483
+
+Long Method => Best Feature: NOCS_package | Cut: 29 | Info Gain: 0.1249
+
+
+---------------------
+
+Clustering:
+
+K-Means
+
+Optimal number of clusters:
+
+Using Elbow method...
+
+If I normalize the data, I can't find an elbow!
+
+Data Class => k = 3
+
+Feature Envy => k = 4
+
+God Class => k = 4
+
+Long Method => k = 4
+
+-----
+
+Code Smell: Data Class | Number of clusters: 3
+
+Cluster: 0
+False: 46
+True: 8
+Homogeneous: NO
+
+Cluster: 1
+True: 38
+False: 30
+Homogeneous: NO
+
+Cluster: 2
+False: 7
+True: 5
+Homogeneous: NO
+
+Number of Homogeneous Clusters: 0
+Points covered in homogeneous clusters: 0.0 %
+
+------
+
+Code Smell: Feature Envy | Number of clusters: 4
+
+
+
+Cluster: 1
+True: 15
+False: 1
+Homogeneous: YES
+
+Cluster: 4
+False: 9
+Homogeneous: YES
+
+Cluster: 5
+True: 2
+False: 31
+Homogeneous: YES
+
+
+
+Cluster: 2
+True: 23
+False: 26
+Homogeneous: NO
+
+Cluster: 3
+True: 6
+False: 8
+Homogeneous: NO
+
+Cluster: 6
+True: 49
+False: 11
+Homogeneous: NO
+
+
+
+
+
+
+Number of Homogeneous Clusters: 1
+Points covered in homogeneous clusters: 13.01 %
+
+------
+
+Code Smell: God Class | Number of clusters: 4
+
+Cluster: 0
+True: 49
+False: 11
+Homogeneous: NO
+
+Cluster: 1
+False: 33
+True: 15
+Homogeneous: NO
+
+Cluster: 2
+False: 31
+True: 4
+Homogeneous: NO
+
+Cluster: 3
+True: 6
+False: 6
+Homogeneous: NO
+
+Number of Homogeneous Clusters: 0
+Points covered in homogeneous clusters: 0.0 %
+
+------
+
+Code Smell: Long Method | Number of clusters: 4
+
+Cluster: 0
+False: 28
+True: 21
+Homogeneous: NO
+
+Cluster: 1
+False: 32
+True: 12
+Homogeneous: NO
+
+Cluster: 2
+True: 4
+False: 3
+Homogeneous: NO
+
+Cluster: 3
+True: 10
+False: 1
+Homogeneous: YES
+
+Number of Homogeneous Clusters: 1
+Points covered in homogeneous clusters: 9.91 %
+
+------
+
+=> This did not help....

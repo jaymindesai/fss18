@@ -1,0 +1,75 @@
+@relation mvnforum-1.2.2-ga
+
+@attribute number_constructor_NotDefaultConstructor_methods numeric
+@attribute NOAM_type numeric
+@attribute isStatic_type {0,1}
+@attribute NOI_project numeric
+@attribute NOCS_project numeric
+@attribute CFNAMM_type numeric
+@attribute number_not_final_not_static_methods numeric
+@attribute number_public_visibility_methods numeric
+@attribute NOPK_project numeric
+@attribute num_static_attributes numeric
+@attribute LOC_project numeric
+@attribute LOC_type numeric
+@attribute number_not_abstract_not_final_methods numeric
+@attribute CBO_type numeric
+@attribute number_not_final_static_methods numeric
+@attribute NOM_project numeric
+@attribute DIT_type numeric
+@attribute num_static_not_final_attributes numeric
+@attribute number_constructor_DefaultConstructor_methods numeric
+@attribute AMWNAMM_type numeric
+@attribute NOCS_type numeric
+@attribute NOI_package numeric
+@attribute TCC_type numeric
+@attribute number_static_methods numeric
+@attribute ATFD_type numeric
+@attribute WOC_type numeric
+@attribute NOM_type numeric
+@attribute number_final_not_static_methods numeric
+@attribute RFC_type numeric
+@attribute number_final_static_methods numeric
+@attribute number_protected_visibility_attributes numeric
+@attribute num_final_not_static_attributes numeric
+@attribute NOA_type numeric
+@attribute NOCS_package numeric
+@attribute NOII_type numeric
+@attribute LOC_package numeric
+@attribute LCOM5_type numeric
+@attribute number_protected_visibility_methods numeric
+@attribute number_standard_design_methods numeric
+@attribute NMO_type numeric
+@attribute FANOUT_type numeric
+@attribute num_final_attributes numeric
+@attribute AMW_type numeric
+@attribute number_private_visibility_methods numeric
+@attribute LOCNAMM_type numeric
+@attribute number_package_visibility_methods numeric
+@attribute number_private_visibility_attributes numeric
+@attribute number_package_visibility_attributes numeric
+@attribute WMC_type numeric
+@attribute NOM_package numeric
+@attribute num_final_static_attributes numeric
+@attribute NOPA_type numeric
+@attribute number_final_methods numeric
+@attribute NOMNAMM_project numeric
+@attribute NIM_type numeric
+@attribute num_not_final_not_static_attributes numeric
+@attribute WMCNAMM_type numeric
+@attribute NOC_type numeric
+@attribute number_abstract_methods numeric
+@attribute NOMNAMM_package numeric
+@attribute NOMNAMM_type numeric
+@attribute SMELLS {True,False}
+
+@data
+1,0,0,90,338,57,9,8,29,3,92696,429,9,26,0,5983,1,2,0,5.555556,0,0,0.642857,0,36,1,9,0,75,0,0,0,4,21,0,9721,0.78125,0,8,0,23,1,5.555556,0,429,1,4,0,50,166,1,0,0,4284,0,1,50,0,0,165,9,True
+1,1,0,90,338,137,3,3,29,2,92696,413,3,22,0,5983,1,1,0,67.5,0,0,1,0,8,0.666667,3,0,140,0,5,1,18,21,1,9721,0.972222,0,1,0,21,2,45.333333,0,407,0,13,0,136,166,1,0,0,4284,0,15,135,0,0,165,2,False
+0,4,0,90,338,0,5,2,29,0,92696,20,5,0,0,5983,1,0,1,0,0,7,0.333333,0,0,0,4,0,4,0,0,0,2,22,0,6260,0.666667,0,0,0,0,0,1,0,0,3,0,2,4,600,0,0,0,4284,0,2,0,0,0,492,0,False
+0,6,0,90,338,0,7,7,29,0,92696,28,7,0,0,5983,1,0,1,0,0,7,0.2,0,0,0,6,0,6,0,0,0,3,22,0,6260,0.8,0,0,0,0,0,1,0,28,0,3,0,6,600,0,0,0,4284,0,3,0,0,0,492,0,True
+1,0,0,90,338,0,1,0,29,17,92696,69,1,0,0,5983,1,0,0,1,0,1,1,0,0,0,1,0,1,0,0,0,17,11,0,3562,0,0,0,0,0,17,1,1,69,0,0,0,1,432,17,17,0,4284,0,0,1,0,0,431,1,True
+1,0,0,90,338,0,1,0,29,42,92696,79,1,0,0,5983,1,0,0,1,0,1,1,0,0,0,1,0,1,0,0,0,42,11,0,3562,0,0,0,0,0,42,1,1,79,0,0,0,1,432,42,42,0,4284,0,0,1,0,0,431,1,True
+0,14,0,90,338,0,15,15,29,0,92696,59,15,0,0,5983,1,0,1,0,0,20,0.076923,0,0,0,14,0,14,0,0,0,7,32,0,5272,0.923077,0,0,0,0,0,1,0,59,0,7,0,14,1009,0,0,0,4284,0,7,0,0,0,426,0,True
+0,42,0,90,338,0,43,43,29,5,92696,204,43,1,0,5983,1,0,1,0,0,20,0.02439,0,0,0,42,0,42,0,0,0,26,32,0,5272,0.984991,0,0,0,0,5,1,0,204,0,21,0,42,1009,5,5,0,4284,0,21,0,0,0,426,0,False
+0,14,0,90,338,0,14,14,29,0,92696,59,14,0,0,5983,1,0,0,0,0,20,0.076923,0,0,0,14,0,14,0,0,0,7,32,0,5272,0.923077,0,0,0,0,0,1,0,59,0,7,0,14,1009,0,0,0,4284,0,7,0,0,0,426,0,False

@@ -1,0 +1,75 @@
+@relation drjava-stable-20100913-r5387
+
+@attribute number_constructor_NotDefaultConstructor_methods numeric
+@attribute NOAM_type numeric
+@attribute isStatic_type {0,1}
+@attribute NOI_project numeric
+@attribute NOCS_project numeric
+@attribute CFNAMM_type numeric
+@attribute number_not_final_not_static_methods numeric
+@attribute number_public_visibility_methods numeric
+@attribute NOPK_project numeric
+@attribute num_static_attributes numeric
+@attribute LOC_project numeric
+@attribute LOC_type numeric
+@attribute number_not_abstract_not_final_methods numeric
+@attribute CBO_type numeric
+@attribute number_not_final_static_methods numeric
+@attribute NOM_project numeric
+@attribute DIT_type numeric
+@attribute num_static_not_final_attributes numeric
+@attribute number_constructor_DefaultConstructor_methods numeric
+@attribute AMWNAMM_type numeric
+@attribute NOCS_type numeric
+@attribute NOI_package numeric
+@attribute TCC_type numeric
+@attribute number_static_methods numeric
+@attribute ATFD_type numeric
+@attribute WOC_type numeric
+@attribute NOM_type numeric
+@attribute number_final_not_static_methods numeric
+@attribute RFC_type numeric
+@attribute number_final_static_methods numeric
+@attribute number_protected_visibility_attributes numeric
+@attribute num_final_not_static_attributes numeric
+@attribute NOA_type numeric
+@attribute NOCS_package numeric
+@attribute NOII_type numeric
+@attribute LOC_package numeric
+@attribute LCOM5_type numeric
+@attribute number_protected_visibility_methods numeric
+@attribute number_standard_design_methods numeric
+@attribute NMO_type numeric
+@attribute FANOUT_type numeric
+@attribute num_final_attributes numeric
+@attribute AMW_type numeric
+@attribute number_private_visibility_methods numeric
+@attribute LOCNAMM_type numeric
+@attribute number_package_visibility_methods numeric
+@attribute number_private_visibility_attributes numeric
+@attribute number_package_visibility_attributes numeric
+@attribute WMC_type numeric
+@attribute NOM_package numeric
+@attribute num_final_static_attributes numeric
+@attribute NOPA_type numeric
+@attribute number_final_methods numeric
+@attribute NOMNAMM_project numeric
+@attribute NIM_type numeric
+@attribute num_not_final_not_static_attributes numeric
+@attribute WMCNAMM_type numeric
+@attribute NOC_type numeric
+@attribute number_abstract_methods numeric
+@attribute NOMNAMM_package numeric
+@attribute NOMNAMM_type numeric
+@attribute SMELLS {False,True}
+
+@data
+1,1,0,95,2250,4,3,4,29,1,130132,61,4,2,1,10364,4,1,0,1,2,3,0,1,0,0.75,5,1,9,0,0,0,1,80,0,4694,1,0,3,3,4,0,1,1,57,0,1,0,5,492,0,0,1,9519,23,0,4,0,0,455,4,False
+0,0,0,95,2250,1,2,1,29,0,130132,24,2,1,0,10364,1,0,1,7,0,3,1,0,0,0,1,0,2,0,0,0,0,80,1,4694,0,0,1,0,1,0,7,0,24,1,0,0,7,492,0,0,0,9519,0,0,7,0,0,455,1,False
+0,4,0,95,2250,0,9,9,29,0,130132,17,9,0,0,10364,2,0,1,1,0,3,0.142857,0,0,0.5,8,0,8,0,0,0,4,80,0,4694,0.857143,0,4,4,0,0,1,0,5,0,4,0,8,492,0,0,0,9519,4,4,4,0,0,455,4,False
+1,3,0,95,2250,0,4,4,29,7,130132,45,4,0,0,10364,1,0,0,1,0,2,0,0,0,0.090909,4,0,4,0,0,0,10,34,0,6146,1,0,0,0,0,7,1,0,20,0,3,0,4,432,7,7,0,9519,0,3,1,0,0,408,1,False
+3,8,0,95,2250,52,63,45,29,5,130132,1371,64,51,1,10364,5,1,0,4.089286,2,2,0.088627,1,7,0.826087,64,0,241,0,0,3,13,31,1,7044,0.965812,7,53,4,19,7,3.859375,10,1286,2,12,0,247,294,4,1,0,9519,169,5,229,0,0,280,56,True
+1,5,0,95,2250,57,26,12,29,2,130132,1079,26,28,0,10364,6,0,0,3.047619,24,4,0.383333,0,25,0.571429,26,0,129,0,0,0,35,1001,1,33723,0.948571,1,20,2,35,2,2.653846,9,1058,4,25,8,69,2606,2,2,0,9519,529,33,64,0,0,2415,21,True
+1,10,1,95,2250,0,11,11,29,0,130132,27,11,1,0,10364,1,0,0,1,0,4,0.111111,0,0,0.090909,11,0,11,0,0,0,5,1001,0,33723,0.9,0,0,0,0,0,1,0,27,0,5,0,11,2606,0,0,0,9519,0,5,1,0,0,2415,1,False
+1,7,0,95,2250,56,47,40,29,2,130132,1008,47,28,0,10364,2,0,0,2.875,14,3,0.398671,0,14,0.825,47,0,115,0,0,2,10,38,1,2130,0.917391,4,39,1,20,4,2.595745,3,965,0,10,0,122,306,2,0,0,9519,7,6,115,1,0,289,40,True
+1,1,0,95,2250,76,31,8,29,2,130132,1881,31,47,0,10364,7,0,0,2.4,34,1,0.428571,0,146,0.875,31,0,116,0,2,18,22,119,0,4772,0.981818,0,29,0,60,20,2.387097,23,1858,0,20,0,74,380,2,0,0,9519,533,2,72,0,0,332,30,True

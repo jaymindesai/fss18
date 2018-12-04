@@ -1,0 +1,75 @@
+@relation fitlibraryforfitnesse-20100806
+
+@attribute number_constructor_NotDefaultConstructor_methods numeric
+@attribute NOAM_type numeric
+@attribute isStatic_type {0,1}
+@attribute NOI_project numeric
+@attribute NOCS_project numeric
+@attribute CFNAMM_type numeric
+@attribute number_not_final_not_static_methods numeric
+@attribute number_public_visibility_methods numeric
+@attribute NOPK_project numeric
+@attribute num_static_attributes numeric
+@attribute LOC_project numeric
+@attribute LOC_type numeric
+@attribute number_not_abstract_not_final_methods numeric
+@attribute CBO_type numeric
+@attribute number_not_final_static_methods numeric
+@attribute NOM_project numeric
+@attribute DIT_type numeric
+@attribute num_static_not_final_attributes numeric
+@attribute number_constructor_DefaultConstructor_methods numeric
+@attribute AMWNAMM_type numeric
+@attribute NOCS_type numeric
+@attribute NOI_package numeric
+@attribute TCC_type numeric
+@attribute number_static_methods numeric
+@attribute ATFD_type numeric
+@attribute WOC_type numeric
+@attribute NOM_type numeric
+@attribute number_final_not_static_methods numeric
+@attribute RFC_type numeric
+@attribute number_final_static_methods numeric
+@attribute number_protected_visibility_attributes numeric
+@attribute num_final_not_static_attributes numeric
+@attribute NOA_type numeric
+@attribute NOCS_package numeric
+@attribute NOII_type numeric
+@attribute LOC_package numeric
+@attribute LCOM5_type numeric
+@attribute number_protected_visibility_methods numeric
+@attribute number_standard_design_methods numeric
+@attribute NMO_type numeric
+@attribute FANOUT_type numeric
+@attribute num_final_attributes numeric
+@attribute AMW_type numeric
+@attribute number_private_visibility_methods numeric
+@attribute LOCNAMM_type numeric
+@attribute number_package_visibility_methods numeric
+@attribute number_private_visibility_attributes numeric
+@attribute number_package_visibility_attributes numeric
+@attribute WMC_type numeric
+@attribute NOM_package numeric
+@attribute num_final_static_attributes numeric
+@attribute NOPA_type numeric
+@attribute number_final_methods numeric
+@attribute NOMNAMM_project numeric
+@attribute NIM_type numeric
+@attribute num_not_final_not_static_attributes numeric
+@attribute WMCNAMM_type numeric
+@attribute NOC_type numeric
+@attribute number_abstract_methods numeric
+@attribute NOMNAMM_package numeric
+@attribute NOMNAMM_type numeric
+@attribute SMELLS {True,False}
+
+@data
+0,2,0,87,795,1,5,5,108,0,25691,26,5,1,0,4165,1,0,0,1.333333,0,0,0.2,0,1,0.6,5,0,7,0,0,0,2,4,2,87,0.75,0,3,0,1,0,1.2,0,15,0,0,2,6,17,0,0,0,3476,0,2,4,0,0,12,3,True
+0,0,0,87,795,1,7,7,108,0,25691,44,7,0,0,4165,1,0,0,1.285714,1,0,0,0,0,1,7,0,8,0,0,0,0,4,1,87,0,0,7,0,1,0,1.285714,0,44,0,0,0,9,17,0,0,0,3476,0,0,9,0,0,12,7,True
+0,7,0,87,795,0,8,8,108,0,25691,32,8,0,0,4165,1,0,0,1,0,3,0.142857,0,0,0.125,8,0,8,0,0,0,4,31,1,423,0.857143,0,1,0,0,0,1,0,32,0,4,0,8,87,0,0,0,3476,0,4,1,0,0,23,1,True
+0,6,1,87,795,0,7,7,108,0,25691,24,7,2,0,4165,1,0,1,0,0,3,0.2,0,0,0,6,0,6,0,0,0,3,31,0,423,0.8,0,0,0,0,0,1,0,24,0,3,0,6,87,0,0,0,3476,0,3,0,1,0,23,0,False
+0,6,1,87,795,0,7,7,108,0,25691,25,7,2,0,4165,1,0,1,0,0,0,0.2,0,0,0,6,0,6,0,0,0,3,128,0,1934,0.8,0,0,0,0,0,1,0,25,0,3,0,6,410,0,0,0,3476,0,3,0,0,0,327,0,False
+1,6,1,87,795,0,7,7,108,0,25691,29,7,2,0,4165,1,0,0,1,0,0,0.2,0,0,0.142857,7,0,7,0,0,0,3,128,0,1934,0.833333,0,0,0,0,0,1,0,29,0,3,0,7,410,0,0,0,3476,0,3,1,0,0,327,1,False
+0,6,0,87,795,0,7,7,108,0,25691,24,7,2,0,4165,1,0,1,0,0,0,0.2,0,0,0,6,0,6,0,0,0,3,11,0,210,0.8,0,0,0,0,0,1,0,24,0,3,0,6,49,0,0,0,3476,0,3,0,0,0,16,0,False
+0,6,0,87,795,0,6,6,108,0,25691,23,6,2,0,4165,1,0,0,0,0,0,0.2,0,0,0,6,0,6,0,0,0,3,11,0,210,0.8,0,0,0,0,0,1,0,23,0,3,0,6,49,0,0,0,3476,0,3,0,0,0,16,0,False
+0,8,0,87,795,0,8,8,108,0,25691,31,8,1,0,4165,1,0,0,0,0,0,0.142857,0,0,0,8,0,8,0,0,0,4,11,0,210,0.857143,0,0,0,0,0,1,0,31,0,4,0,8,49,0,0,0,3476,0,4,0,0,0,16,0,False
